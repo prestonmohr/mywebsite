@@ -163,9 +163,9 @@ section a:hover {
 .badge-apple        { background: #000000; color: #ffffff; }
 .badge-universal    { background: #005395; color: #ffffff; }
 .badge-newline      { background: #000000; color: #ffffff; }
-.badge-warnerbros   { background: #ffbf00; color: #1f20ae; }
+.badge-warnerbros   { background: #1f20ae; color: #ffffff; }
 .badge-pglang       { background: #ec1c24; color: #ffffff; }
-.badge-psycho       { background: #2d0a3a; color: #d4a8e8; }
+.badge-psycho       { background: #d4a8e8; color: #ffffff; }
 .badge-cashapp      { background: #00e013; color: #ffffff; }
 .badge-rbf1         { background: #1d3aca; color: #ffffff; }
 .badge-syracuse     { background: #f2571a; color: #ffffff; }
@@ -219,7 +219,7 @@ section a:hover {
 }
 
 .campaign-links a:hover {
-    background: #444;
+    background: #444444;
     color: #ffffff;
     text-decoration: none;
 }
