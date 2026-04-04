@@ -1,1 +1,24 @@
-// Select the navigation menuconst nav = document.querySelector('nav');// Select sections for smooth scrollingconst sections = document.querySelectorAll('section');document.addEventListener('DOMContentLoaded', () => {    // Add "active" class to all sections initially (optional based on your styling)    sections.forEach(section => {        section.classList.add('active');    });        // Smooth scroll functionality for navigation links    nav.addEventListener('click', (event) => {        if (event.target.tagName === 'A') {            event.preventDefault(); // Prevent default anchor link behavior            const targetSection = document.getElementById(event.target.getAttribute('href').slice(1)); // Get section ID from href                        if (targetSection) {                const targetY = targetSection.offsetTop; // Get section's top position relative to document                                // Smooth scrolling animation                window.scrollTo({                top: targetY,                behavior: 'smooth'                });            }        }    });});
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('nav');
+    const sections = document.querySelectorAll('section');
+
+    // Make all sections visible on load
+    sections.forEach(section => {
+        section.classList.add('active');
+    });
+
+    // Smooth scroll for navigation links
+    nav.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+            event.preventDefault();
+            const targetSection = document.getElementById(event.target.getAttribute('href').slice(1));
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
