@@ -20,7 +20,7 @@ header h1 {
 }
 
 header p {
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 0;
 }
 
@@ -222,4 +222,17 @@ section a:hover {
     background: #444444;
     color: #ffffff;
     text-decoration: none;
+}
+
+.skill {
+    display: inline-block;
+    font-size: 0.78em;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #c8cdd4;
+    color: #3a3f45;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
