@@ -118,6 +118,7 @@ header {
 header h1 {
     font-size: var(--fs-h1);
     margin: 0 0 12px 0;
+    letter-spacing: -4px;
 }
 
 nav ul {
@@ -413,8 +414,9 @@ h2 {
     gap: 5px;
     background: transparent;
     color: var(--badge-mtv-text);
-    border: 1.5px solid var(--badge-mtv-border);
     font-size: var(--fs-xs);
+    outline: 1.5px solid var(--badge-mtv-border);
+    outline-offset: -1px;
     font-weight: 600;
     padding: 2px 9px;
     border-radius: var(--radius-pill);
