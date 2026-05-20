@@ -6,68 +6,84 @@
     --font-main: sans-serif;
 
     /* colors — page */
-    --color-bg:           #ffffff;
-    --color-surface:      #f0f4f8;
-    --color-shadow:       rgba(0, 0, 0, 0.2);
+    --color-bg:             #ffffff;
+    --color-surface:        #f0f4f8;
+    --color-shadow:         rgba(0, 0, 0, 0.2);
 
     /* colors — text */
-    --color-text:         #000000;
-    --color-text-muted:   #808080;
-    --color-text-nav:     #000000;
+    --color-text:           #000000;
+    --color-text-muted:     #808080;
+    --color-text-nav:       #000000;
     --color-text-nav-hover: #949699;
 
     /* colors — poster overlay */
-    --color-overlay-role:   #f0f4f8;
-    --color-overlay-title:  #ffffff;
-    --color-overlay-date:   rgba(255, 255, 255, 0.55);
-    --color-overlay-divider:rgba(255, 255, 255, 0.4);
-    --color-overlay-label:  rgba(255, 255, 255, 0.45);
-    --color-overlay-name:   #ffffff;
+    --color-overlay-role:    #f0f4f8;
+    --color-overlay-title:   #ffffff;
+    --color-overlay-date:    rgba(255, 255, 255, 0.55);
+    --color-overlay-divider: rgba(255, 255, 255, 0.4);
+    --color-overlay-label:   rgba(255, 255, 255, 0.45);
+    --color-overlay-name:    #ffffff;
 
-    /* colors — badges */
-    --badge-adidas:       #000000;
-    --badge-thorne:       #993686;
-    --badge-netflix:      #e50914;
-    --badge-skydance:     #452a6f;
-    --badge-apple:        #000000;
-    --badge-universal:    #005395;
-    --badge-newline:      #000000;
-    --badge-warnerbros:   #1f20ae;
-    --badge-pglang:       #ec1c24;
-    --badge-psycho:       #d4a8e8;
-    --badge-cashapp:      #00e013;
-    --badge-rbf1:         #1d3aca;
-    --badge-syracuse:     #f2571a;
-    --badge-mtv-text:     #7a5c00;
-    --badge-mtv-border:   #b8860b;
-    --badge-mtv-hover-bg: #b8860b;
-    --badge-mtv-hover-text: #fde68a;
+    /* colors — studio badges */
+    --badge-adidas:          #000000;
+    --badge-thorne:          #993686;
+    --badge-netflix:         #e50914;
+    --badge-skydance:        #452a6f;
+    --badge-apple:           #000000;
+    --badge-universal:       #005395;
+    --badge-newline:         #000000;
+    --badge-warnerbros:      #1f20ae;
+    --badge-pglang:          #ec1c24;
+    --badge-psycho:          #d4a8e8;
+    --badge-cashapp:         #00e013;
+    --badge-rbf1:            #1d3aca;
+    --badge-syracuse:        #f2571a;
 
-    /* colors — skills */
-    --skill-bg:           #c8cdd4;
-    --skill-text:         #3a3f45;
+    /* colors — mtv badge */
+    --badge-mtv-text:        #7a5c00;
+    --badge-mtv-border:      #b8860b;
+    --badge-mtv-hover-bg:    #b8860b;
+    --badge-mtv-hover-text:  #fde68a;
+
+    /* colors — skill pills */
+    --skill-bg:              #c8cdd4;
+    --skill-text:            #3a3f45;
+    --skill-hover-bg:        #3a3f45;
+    --skill-hover-text:      #ffffff;
 
     /* colors — campaign links */
-    --campaign-bg:        #000000;
-    --campaign-bg-hover:  #444444;
+    --campaign-border:       rgba(0, 0, 0, 0.25);
+    --campaign-hover-bg:     #000000;
+    --campaign-hover-color:  #ffffff;
+
+    /* colors — inline links */
+    --link-hover-color:      #949699;
 
     /* sizing */
-    --radius-card:        40px;
-    --radius-poster:      20px;
-    --radius-pill:        999px;
-    --shadow-card:        -5px 5px 10px var(--color-shadow);
-    --gap-grid:           12px;
-    --gap-grid-sm:        10px;
-    --gap-grid-xs:        8px;
+    --radius-card:           40px;
+    --radius-poster:         20px;
+    --radius-pill:           999px;
+
+    /* shadows */
+    --shadow-card:           -5px 5px 10px var(--color-shadow);
+
+    /* spacing */
+    --gap-grid:              12px;
+    --gap-grid-sm:           10px;
+    --gap-grid-xs:           8px;
 
     /* font sizes */
-    --fs-base:            1em;
-    --fs-h1:              2em;
-    --fs-h2:              1.5em;
-    --fs-small:           0.78em;
-    --fs-xs:              0.72em;
-    --fs-xxs:             0.62em;
-    --fs-overlay-label:   0.60em;
+    --fs-base:               1em;
+    --fs-h1:                 4em;
+    --fs-h2:                 1.5em;
+    --fs-small:              0.78em;
+    --fs-xs:                 0.72em;
+    --fs-xxs:                0.62em;
+    --fs-overlay-label:      0.60em;
+
+    /* transitions */
+    --transition-base:       0.2s ease;
+    --transition-slow:       0.35s ease;
 }
 
 /* ═══════════════════════════════════════════
@@ -92,14 +108,16 @@ body {
 header {
     background-image: linear-gradient(to bottom, var(--color-surface), transparent);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px 20px 38px;
+    justify-content: center;
+    padding: 28px 20px 20px;
+    text-align: center;
 }
 
 header h1 {
     font-size: var(--fs-h1);
-    margin: 0;
+    margin: 0 0 12px 0;
 }
 
 nav ul {
@@ -113,14 +131,22 @@ nav li {
     margin-right: 20px;
 }
 
+nav li:last-child {
+    margin-right: 0;
+}
+
 nav a {
     text-decoration: none;
     color: var(--color-text-nav);
+    transition: color var(--transition-base);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base);
 }
 
 nav a:hover {
     color: var(--color-text-nav-hover);
-    text-decoration: underline;
+    border-bottom-color: var(--color-text-nav-hover);
 }
 
 /* ═══════════════════════════════════════════
@@ -168,11 +194,19 @@ section h3 {
 section a {
     text-decoration: none;
     color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base);
 }
 
 section a:hover {
-    color: var(--color-text-muted);
-    text-decoration: underline;
+    color: var(--link-hover-color);
+    border-bottom-color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+section a:has(.badge-mtv),
+section a:has(.badge-mtv):hover {
+    border-bottom: none;
 }
 
 h2 {
@@ -229,6 +263,11 @@ h2 {
     background: transparent;
     text-decoration: none;
     aspect-ratio: 2 / 3;
+    border-bottom: none;
+}
+
+.poster-card:hover {
+    border-bottom: none;
 }
 
 .poster-card img {
@@ -253,7 +292,7 @@ h2 {
     justify-content: flex-end;
     padding: 16px 14px;
     opacity: 0;
-    transition: opacity 0.35s ease;
+    transition: opacity var(--transition-slow);
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.90) 0%,
@@ -282,7 +321,6 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* studio badge sits directly under the title */
 .poster-badge {
     align-self: flex-start;
     margin-bottom: 6px;
@@ -335,34 +373,39 @@ h2 {
     border-radius: var(--radius-pill);
     margin-bottom: 5px;
     vertical-align: middle;
+    border-bottom: none;
 }
 
-.badge-adidas                { background: var(--badge-adidas);     color: #fff; }
-.badge-adidas.inverted       { background: #fff;                    color: var(--badge-adidas); }
-.badge-thorne                { background: var(--badge-thorne);     color: #fff; }
-.badge-thorne.inverted       { background: #fff;                    color: var(--badge-thorne); }
-.badge-netflix               { background: var(--badge-netflix);    color: #fff; }
-.badge-netflix.inverted      { background: #fff;                    color: var(--badge-netflix); }
-.badge-skydance              { background: var(--badge-skydance);   color: #fff; }
-.badge-skydance.inverted     { background: #fff;                    color: var(--badge-skydance); }
-.badge-apple                 { background: var(--badge-apple);      color: #fff; }
-.badge-apple.inverted        { background: #fff;                    color: var(--badge-apple); }
-.badge-universal             { background: var(--badge-universal);  color: #fff; }
-.badge-universal.inverted    { background: #fff;                    color: var(--badge-universal); }
-.badge-newline               { background: var(--badge-newline);    color: #fff; }
-.badge-newline.inverted      { background: #fff;                    color: var(--badge-newline); }
-.badge-warnerbros            { background: var(--badge-warnerbros); color: #fff; }
-.badge-warnerbros.inverted   { background: #fff;                    color: var(--badge-warnerbros); }
-.badge-pglang                { background: var(--badge-pglang);     color: #fff; }
-.badge-pglang.inverted       { background: #fff;                    color: var(--badge-pglang); }
-.badge-psycho                { background: var(--badge-psycho);     color: #fff; }
-.badge-psycho.inverted       { background: #fff;                    color: var(--badge-psycho); }
-.badge-cashapp               { background: var(--badge-cashapp);    color: #fff; }
-.badge-cashapp.inverted      { background: #fff;                    color: var(--badge-cashapp); }
-.badge-rbf1                  { background: var(--badge-rbf1);       color: #fff; }
-.badge-rbf1.inverted         { background: #fff;                    color: var(--badge-rbf1); }
-.badge-syracuse              { background: var(--badge-syracuse);   color: #fff; }
-.badge-syracuse.inverted     { background: #fff;                    color: var(--badge-syracuse); }
+.badge:hover {
+    border-bottom: none;
+}
+
+.badge-adidas              { background: var(--badge-adidas);     color: #fff; }
+.badge-adidas.inverted     { background: #fff;                    color: var(--badge-adidas); }
+.badge-thorne              { background: var(--badge-thorne);     color: #fff; }
+.badge-thorne.inverted     { background: #fff;                    color: var(--badge-thorne); }
+.badge-netflix             { background: var(--badge-netflix);    color: #fff; }
+.badge-netflix.inverted    { background: #fff;                    color: var(--badge-netflix); }
+.badge-skydance            { background: var(--badge-skydance);   color: #fff; }
+.badge-skydance.inverted   { background: #fff;                    color: var(--badge-skydance); }
+.badge-apple               { background: var(--badge-apple);      color: #fff; }
+.badge-apple.inverted      { background: #fff;                    color: var(--badge-apple); }
+.badge-universal           { background: var(--badge-universal);  color: #fff; }
+.badge-universal.inverted  { background: #fff;                    color: var(--badge-universal); }
+.badge-newline             { background: var(--badge-newline);    color: #fff; }
+.badge-newline.inverted    { background: #fff;                    color: var(--badge-newline); }
+.badge-warnerbros          { background: var(--badge-warnerbros); color: #fff; }
+.badge-warnerbros.inverted { background: #fff;                    color: var(--badge-warnerbros); }
+.badge-pglang              { background: var(--badge-pglang);     color: #fff; }
+.badge-pglang.inverted     { background: #fff;                    color: var(--badge-pglang); }
+.badge-psycho              { background: var(--badge-psycho);     color: #fff; }
+.badge-psycho.inverted     { background: #fff;                    color: var(--badge-psycho); }
+.badge-cashapp             { background: var(--badge-cashapp);    color: #fff; }
+.badge-cashapp.inverted    { background: #fff;                    color: var(--badge-cashapp); }
+.badge-rbf1                { background: var(--badge-rbf1);       color: #fff; }
+.badge-rbf1.inverted       { background: #fff;                    color: var(--badge-rbf1); }
+.badge-syracuse            { background: var(--badge-syracuse);   color: #fff; }
+.badge-syracuse.inverted   { background: #fff;                    color: var(--badge-syracuse); }
 
 .badge-mtv {
     display: inline-flex;
@@ -375,6 +418,7 @@ h2 {
     font-weight: 600;
     padding: 2px 9px;
     border-radius: var(--radius-pill);
+    transition: background var(--transition-base), color var(--transition-base);
 }
 
 .badge-mtv svg {
@@ -382,6 +426,7 @@ h2 {
     height: 11px;
     fill: var(--badge-mtv-border);
     flex-shrink: 0;
+    transition: fill var(--transition-base);
 }
 
 .badge-mtv:hover {
@@ -393,16 +438,15 @@ h2 {
     fill: var(--badge-mtv-hover-text);
 }
 
-
 /* ═══════════════════════════════════════════
    CAMPAIGN LINKS
 ═══════════════════════════════════════════ */
 .campaign-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 6px;
     margin-left: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .campaign-links a {
@@ -410,15 +454,19 @@ h2 {
     font-size: var(--fs-xs);
     font-weight: 600;
     padding: 3px 10px;
-    background: var(--campaign-bg);
-    color: #fff;
+    background: transparent;
+    color: var(--color-text);
     text-decoration: none;
+    border-radius: var(--radius-pill);
+    outline: 1.5px solid var(--campaign-border);
+    outline-offset: -1px;
+    transition: background var(--transition-base), color var(--transition-base), outline-color var(--transition-base);
 }
 
 .campaign-links a:hover {
-    background: var(--campaign-bg-hover);
-    color: #fff;
-    text-decoration: none;
+    background: var(--campaign-hover-bg);
+    color: var(--campaign-hover-color);
+    outline-color: var(--campaign-hover-bg);
 }
 
 /* ═══════════════════════════════════════════
@@ -433,6 +481,14 @@ h2 {
     background: var(--skill-bg);
     color: var(--skill-text);
     margin: 2px 2px 2px 0;
+    cursor: default;
+    user-select: none;
+    transition: background var(--transition-base), color var(--transition-base);
+}
+
+.skill:hover {
+    background: var(--skill-hover-bg);
+    color: var(--skill-hover-text);
 }
 
 /* ═══════════════════════════════════════════
@@ -447,6 +503,7 @@ h2 {
 
 .social-media-icons a {
     margin-right: 10px;
+    border-bottom: none;
 }
 
 .social-media-icons a:last-child {
@@ -454,7 +511,11 @@ h2 {
 }
 
 .social-media-icons a img {
-    transition: transform 0.2s ease-in-out;
+    transition: transform var(--transition-base);
+}
+
+.social-media-icons a:hover {
+    border-bottom: none;
 }
 
 .social-media-icons a:hover img {
