@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
-    const sections = document.querySelectorAll('section');
+    const revealEls = document.querySelectorAll('.scroll-reveal');
 
-    // Make all sections visible on load
-    sections.forEach(section => {
-        section.classList.add('active');
-    });
+    // Make all elements visible immediately on load
+    revealEls.forEach(el => el.classList.add('visible'));
 
     // Smooth scroll for navigation links
     nav.addEventListener('click', (event) => {
         if (event.target.tagName === 'A') {
             event.preventDefault();
-            const targetSection = document.getElementById(event.target.getAttribute('href').slice(1));
+            const targetId = event.target.getAttribute('href').slice(1);
+            const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 window.scrollTo({
